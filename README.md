@@ -10,24 +10,24 @@ A modern Go + Postgres service to **capture, inspect, and replay webhooks**. Fas
 ## Table of Contents
 - [Webhook Inbox](#webhook-inbox)
   - [Table of Contents](#table-of-contents)
-  - [🚀 Features](#-features)
-  - [🛠️ Tech Stack](#️-tech-stack)
-  - [⚡ Quickstart](#-quickstart)
-  - [📖 Usage Examples](#-usage-examples)
+  - [Features](#features)
+  - [Tech Stack](#tech-stack)
+  - [Quickstart](#quickstart)
+  - [Usage Examples](#usage-examples)
     - [1. Create an endpoint (GitHub)](#1-create-an-endpoint-github)
     - [2. Send a signed GitHub webhook](#2-send-a-signed-github-webhook)
     - [3. List messages](#3-list-messages)
     - [4. Replay a message to a test server](#4-replay-a-message-to-a-test-server)
-  - [🌐 Expose to GitHub with ngrok](#-expose-to-github-with-ngrok)
-  - [📚 API Reference](#-api-reference)
-  - [🧑‍💻 Development](#-development)
-  - [🔒 Security Notes](#-security-notes)
-  - [📝 License](#-license)
-  - [🤝 Contributing](#-contributing)
+  - [Expose to GitHub with ngrok](#expose-to-github-with-ngrok)
+  - [API Reference](#api-reference)
+  - [Development](#development)
+  - [Security Notes](#security-notes)
+  - [License](#license)
+  - [Contributing](#contributing)
 
 ---
 
-## 🚀 Features
+## Features
 - **Endpoint provisioning** – generate unique webhook URLs with secrets
 - **Message storage** – save headers + body in PostgreSQL
 - **Payload inspection** – view exactly what your service received
@@ -37,7 +37,7 @@ A modern Go + Postgres service to **capture, inspect, and replay webhooks**. Fas
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 - **Go** (chi router, net/http)
 - **PostgreSQL**
 - **Docker & Docker Compose**
@@ -45,7 +45,7 @@ A modern Go + Postgres service to **capture, inspect, and replay webhooks**. Fas
 
 ---
 
-## ⚡ Quickstart
+## Quickstart
 ```bash
 # Clone the repo
 git clone https://github.com/sudo-init-do/webhook-inbox.git
@@ -64,7 +64,7 @@ curl http://localhost:8080/health
 
 ---
 
-## 📖 Usage Examples
+## Usage Examples
 
 ### 1. Create an endpoint (GitHub)
 ```bash
@@ -109,7 +109,7 @@ curl -s -X POST "http://localhost:8080/api/messages/1/replay" \
 
 ---
 
-## 🌐 Expose to GitHub with ngrok
+## Expose to GitHub with ngrok
 ```bash
 ngrok http 8080
 ```
@@ -119,7 +119,7 @@ Use the public URL as your webhook target:
 
 ---
 
-## 📚 API Reference
+## API Reference
 | Method | Path | Description |
 |--------|------|-------------|
 | POST   | `/api/endpoints`         | Create new endpoint |
@@ -130,7 +130,7 @@ Use the public URL as your webhook target:
 
 ---
 
-## 🧑‍💻 Development
+## Development
 ```bash
 # Start stack
 docker compose up --build
@@ -144,18 +144,18 @@ docker compose exec backend go test ./... -v
 
 ---
 
-## 🔒 Security Notes
+## Security Notes
 - **Never commit `.env` or secrets to version control**
 - **Use HTTPS** when exposing publicly
 - **Rotate secrets** regularly
 
 ---
 
-## 📝 License
+## License
 MIT — free to use, modify, and distribute.
 
 ---
 
-## 🤝 Contributing
+## Contributing
 Pull requests are welcome! For major changes, please open an issue first to discuss what you’d like to change.
 
