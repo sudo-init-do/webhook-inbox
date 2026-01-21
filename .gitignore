@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# Go build artifacts
+backend/server
+*.out
+*.log
+
+# Env files
+.env
+backend/.env
+
+# Node/Frontend (future)
+node_modules/
+dist/
+build/
+coverage/
+
+# Docker
+.docker/
+
